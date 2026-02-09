@@ -1,0 +1,37 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Almaz [
+    <!ELEMENT timeTable (complexes, lessons)>
+    <!ELEMENT complexes (complex+)>
+    <!ELEMENT complex (name, address)>
+    <!ATTLIST complex code ID #REQUIRED>
+    <!ELEMENT lessons (lesson+)>
+    <!ELEMENT lesson (date, time)>
+    <!ATTLIST lesson no CDATA #REQUIRED>
+    <!ATTLIST lesson complex IDREF #REQUIRED>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT address (#PCDATA)>
+    <!ELEMENT date (#PCDATA)>
+    <!ELEMENT time (#PCDATA)>
+]>                                               
+<xasan2>
+    <complexes>
+        <complex code="C1">
+            <name>Complex A</name>
+            <address>123 Main St</address>
+        </complex>
+        <complex code="C2">
+            <name>Complex B</name>
+            <address>456 Elm St</address>
+        </complex>
+    </complexes>
+    <lessons>
+        <lesson no="1" complex="C1">
+            <date>2025-09-25</date>
+            <time>10:00</time>
+        </lesson>
+        <lesson no="2" complex="C2">
+            <date>2025-09-26</date>
+            <time>11:00</time>
+        </lesson>
+    </lessons>
+</xasan2>
